@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore Space</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#0b1020;
+    color:white;
+}
+
+header{
+    background:linear-gradient(135deg,#4f46e5,#06b6d4);
+    text-align:center;
+    padding:60px 20px;
+}
+
+header h1{
+    font-size:3rem;
+}
+
+header p{
+    margin-top:10px;
+    font-size:1.1rem;
+}
+
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    background:white;
+    color:#222;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#ffd54f;
+}
+
+section{
+    max-width:900px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#1c2541;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    background:#2d3e6f;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#111827;
+    margin-top:40px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>🚀 Explore Space</h1>
+    <p>Discover the wonders beyond Earth.</p>
+    <button onclick="showFact()">Show Space Fact</button>
+</header>
+
+<section>
+    <h2 style="margin-bottom:20px;">Amazing Facts</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>🌍 Earth</h3>
+            <p>Earth is the only known planet that supports life.</p>
+        </div>
+
+        <div class="card">
+            <h3>🌕 Moon</h3>
+            <p>The Moon is moving away from Earth by about 3.8 cm every year.</p>
+        </div>
+
+        <div class="card">
+            <h3>⭐ Stars</h3>
+            <p>There are billions of stars in our galaxy alone.</p>
+        </div>
+    </div>
+
+    <h3 style="margin-top:30px;">Random Fact:</h3>
+    <p id="fact">Click the button above to learn something new!</p>
+</section>
+
+<footer>
+    Made with ❤️ using HTML, CSS & JavaScript
+</footer>
+
+<script>
+const facts = [
+    "A day on Venus is longer than a year on Venus.",
+    "The Sun contains over 99% of the Solar System's mass.",
+    "Neutron stars are so dense that a teaspoon would weigh billions of tons.",
+    "There are more stars in the universe than grains of sand on Earth.",
+    "Jupiter has more than 90 known moons."
+];
+
+function showFact(){
+    const random = Math.floor(Math.random() * facts.length);
+    document.getElementById("fact").textContent = facts[random];
+}
+</script>
+
+</body>
+</html>
